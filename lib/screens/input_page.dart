@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../components/reusable_text_field.dart';
+import '../services/loan_calculator.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -7,6 +8,20 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
+  double principal;
+  int interest;
+  int period;
+  String monthlyPayment = '0';
+
+  void getLoanPayment() {
+    LoanCalculator loan = LoanCalculator(principal, interest, period);
+    String result = loan.calculateLoan();
+    setState(() {
+      print(result);
+      monthlyPayment = result;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,9 +45,10 @@ class _InputPageState extends State<InputPage> {
                           color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
+                    SizedBox(height: 20.0),
                     Text(
-                      '20000000',
-                      style: TextStyle(fontSize: 60.0, color: Colors.white),
+                      monthlyPayment.toString(),
+                      style: TextStyle(fontSize: 40.0, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
                   ],
@@ -48,28 +64,45 @@ class _InputPageState extends State<InputPage> {
 //              mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   ReusableTextField(
+                    onType: (value) {
+                      setState(() {
+                        principal = double.parse(value);
+                      });
+                    },
                     placeholder: 'Enter principal amount',
                   ),
                   SizedBox(height: 10.0),
                   ReusableTextField(
+                    onType: (value) {
+                      setState(() {
+                        print(value);
+                        period = int.parse(value);
+                      });
+                    },
                     placeholder: 'Enter payment period',
                   ),
                   SizedBox(height: 10.0),
                   ReusableTextField(
+                    onType: (value) {
+                      setState(() {
+                        print(value);
+                        interest = int.parse(value);
+                      });
+                    },
                     placeholder: 'Enter interest rate',
                   ),
                   SizedBox(height: 20.0),
                   Container(
                     child: FlatButton(
                       onPressed: () {
-                        /*...*/
+                        getLoanPayment();
                       },
                       child: Text(
                         "Calculate",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 30.0,
-                          color: Colors.grey,
+                          color: Colors.white,
                         ),
                         textAlign: TextAlign.center,
                       ),
@@ -82,6 +115,7 @@ class _InputPageState extends State<InputPage> {
                               style: BorderStyle.solid,
                               color: Colors.grey),
                           borderRadius: BorderRadius.circular(50)),
+                      color: Color(0xFF0A0E21),
                     ),
                   )
                 ],
