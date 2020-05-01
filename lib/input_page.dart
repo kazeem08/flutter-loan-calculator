@@ -41,6 +41,90 @@ class _InputPageState extends State<InputPage> {
                   color: Color(0xFF0A0E21),
                 )),
           ),
+          Expanded(
+            flex: 2,
+            child: Column(
+//              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Container(
+                  width: 300.0,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        fillColor: Color(0xFFF2F2F2),
+                        filled: true,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10.0),
+                          ),
+                          borderSide: BorderSide(width: 1.0),
+                        ),
+                        hintText: 'Enter principal amount',
+                        hintStyle: TextStyle(color: Colors.grey)),
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Container(
+                  width: 300.0,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        fillColor: Color(0xFFF2F2F2),
+                        filled: true,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10.0),
+                          ),
+                          borderSide: BorderSide(width: 1.0),
+                        ),
+                        hintText: 'Enter period of payment',
+                        hintStyle: TextStyle(color: Colors.grey)),
+                  ),
+                ),
+                SizedBox(height: 10.0),
+                Container(
+                  width: 300.0,
+                  child: TextField(
+                    decoration: InputDecoration(
+                        fillColor: Color(0xFFF2F2F2),
+                        filled: true,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10.0),
+                          ),
+                          borderSide: BorderSide(width: 1.0),
+                        ),
+                        hintText: 'Enter Interest rate',
+                        hintStyle: TextStyle(color: Colors.grey)),
+                  ),
+                ),
+                SizedBox(height: 20.0),
+                Container(
+                  child: FlatButton(
+                    onPressed: () {
+                      /*...*/
+                    },
+                    child: Text(
+                      "Calculate",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30.0,
+                        color: Colors.grey,
+                      ),
+                      textAlign: TextAlign.center,
+                    ),
+//                    color: Colors.red,
+                    padding:
+                        EdgeInsets.symmetric(vertical: 8.0, horizontal: 20.0),
+                    shape: RoundedRectangleBorder(
+                        side: BorderSide(
+                            width: 1.0,
+                            style: BorderStyle.solid,
+                            color: Colors.grey),
+                        borderRadius: BorderRadius.circular(50)),
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
