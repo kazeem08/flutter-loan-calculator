@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../components/reusable_text_field.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -46,55 +47,16 @@ class _InputPageState extends State<InputPage> {
               child: Column(
 //              mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(
-                    width: 300.0,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          fillColor: Color(0xFFF2F2F2),
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10.0),
-                            ),
-                            borderSide: BorderSide(width: 1.0),
-                          ),
-                          hintText: 'Enter principal amount',
-                          hintStyle: TextStyle(color: Colors.grey)),
-                    ),
+                  ReusableTextfield(
+                    placeholder: 'Enter principal amount',
                   ),
                   SizedBox(height: 10.0),
-                  Container(
-                    width: 300.0,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          fillColor: Color(0xFFF2F2F2),
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10.0),
-                            ),
-                            borderSide: BorderSide(width: 1.0),
-                          ),
-                          hintText: 'Enter period of payment',
-                          hintStyle: TextStyle(color: Colors.grey)),
-                    ),
+                  ReusableTextfield(
+                    placeholder: 'Enter payment period',
                   ),
                   SizedBox(height: 10.0),
-                  Container(
-                    width: 300.0,
-                    child: TextField(
-                      decoration: InputDecoration(
-                          fillColor: Color(0xFFF2F2F2),
-                          filled: true,
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10.0),
-                            ),
-                            borderSide: BorderSide(width: 1.0),
-                          ),
-                          hintText: 'Enter Interest rate',
-                          hintStyle: TextStyle(color: Colors.grey)),
-                    ),
+                  ReusableTextfield(
+                    placeholder: 'Enter interest rate',
                   ),
                   SizedBox(height: 20.0),
                   Container(
