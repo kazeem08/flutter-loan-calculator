@@ -93,7 +93,7 @@ class _InputPageState extends State<InputPage> {
                     placeholder: 'Enter interest rate',
                   ),
                   SizedBox(height: 20.0),
-                  ButtomButton(
+                  BottomButton(
                     onType: () {
                       setState(() {
                         getLoanPayment();

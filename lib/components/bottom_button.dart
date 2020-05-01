@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ButtomButton extends StatelessWidget {
-  ButtomButton({@required this.onType});
+class BottomButton extends StatelessWidget {
+  BottomButton({@required this.onType});
 
   final Function onType;
   @override
