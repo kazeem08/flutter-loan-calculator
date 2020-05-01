@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class ReusableTextfield extends StatelessWidget {
-  String placeholder;
-  ReusableTextfield({@required this.placeholder});
+class ReusableTextField extends StatelessWidget {
+  final String placeholder;
+  ReusableTextField({@required this.placeholder});
   @override
   Widget build(BuildContext context) {
     return Container(

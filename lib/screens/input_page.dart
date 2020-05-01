@@ -47,15 +47,15 @@ class _InputPageState extends State<InputPage> {
               child: Column(
 //              mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  ReusableTextfield(
+                  ReusableTextField(
                     placeholder: 'Enter principal amount',
                   ),
                   SizedBox(height: 10.0),
-                  ReusableTextfield(
+                  ReusableTextField(
                     placeholder: 'Enter payment period',
                   ),
                   SizedBox(height: 10.0),
-                  ReusableTextfield(
+                  ReusableTextField(
                     placeholder: 'Enter interest rate',
                   ),
                   SizedBox(height: 20.0),
