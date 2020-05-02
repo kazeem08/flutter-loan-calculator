@@ -1,4 +1,4 @@
-# flutter Loan Calculator
+# Flutter Loan Calculator
 
 A new Flutter application.
 
