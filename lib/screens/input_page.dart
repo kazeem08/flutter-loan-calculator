@@ -12,7 +12,7 @@ class _InputPageState extends State<InputPage> {
   double principal;
   int interest;
   int period;
-  String monthlyPayment = '0';
+  String monthlyPayment = '0.0';
 
   void getLoanPayment() {
     LoanCalculator loan = LoanCalculator(principal, interest, period);
@@ -55,7 +55,7 @@ class _InputPageState extends State<InputPage> {
                     ),
                     SizedBox(height: 20.0),
                     Text(
-                      monthlyPayment.toString(),
+                      '₦$monthlyPayment',
                       style: TextStyle(fontSize: 40.0, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
